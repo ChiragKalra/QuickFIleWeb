@@ -47,7 +47,8 @@ div.content {
 input {
   background: #222222;
   color: #b3d4fc;
-  margin: 20px;
+  margin: 5px;
+  height: 25px;
 }
 
 img.loading {

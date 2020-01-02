@@ -58,51 +58,55 @@ fileUpload.addEventListener('change', function(e) {
   });
 });
 
+function bruh() {
+  $(".login").toggle();
+  $(".loading").toggle();
+  firebase.database().ref('key').once('value').then(function(snapshot) {
+    if (txtElementToken.value == snapshot.val()) {
+      firebase.database().ref('upload').once('value').then(function (snapshot) {
+        if (!snapshot.val()) {
+          $(".upload").hide();
+          $(".no").show();
+        }
+      });
+      firebase.database().ref('public').once('value').then(function (snapshot) {
+        const list = snapshot.val();
+        if (list != null && list.length !== 0) {
+          //download data
+          for (let i = 0; i < list.length; i++) {
+            firebase.database().ref('files/' + list[i]).once('value').then(function (snapshot) {
+              firebase.storage().refFromURL(snapshot.val().link).getDownloadURL().then(function (url) {
+                let newItem = document.createElement("a");
+                newItem.href = url;
+                let id = snapshot.val().link.split('/').pop().split('.')[0];
+                newItem.id = id;
+                $('.content').append(newItem);
+                $('#' + id).addClass('itemee').text(snapshot.val().name + '.' + snapshot.val().ext)
+                  .attr("target", "_blank");
+                if (i === list.length - 1) {
+                  $(".no").hide();
+                  $(".content").toggle();
+                  $(".loading").toggle();
+                }
+              });
+            });
+          }
+        } else {
+          $(".content").toggle();
+          $(".loading").toggle();
+        }
+      });
+    } else {
+      txtElementToken.value = '';
+      $(".login").toggle();
+      $(".loading").toggle();
+    }
+  });
+}
+
 txtElementToken.onkeypress = keypress;
 function keypress(e) {
   if (e.code === "Enter") {
-    $(".login").toggle();
-    $(".loading").toggle();
-    firebase.database().ref('key').once('value').then(function(snapshot) {
-      if (txtElementToken.value == snapshot.val()) {
-        firebase.database().ref('upload').once('value').then(function (snapshot) {
-          if (!snapshot.val()) {
-            $(".upload").hide();
-            $(".no").show();
-          }
-        });
-        firebase.database().ref('public').once('value').then(function(snapshot) {
-          const list = snapshot.val();
-          if (list!=null && list.length!==0) {
-            //download data
-            for(let i = 0; i < list.length; i++) {
-              firebase.database().ref('files/'+list[i]).once('value').then(function (snapshot) {
-                firebase.storage().refFromURL(snapshot.val().link).getDownloadURL().then(function(url) {
-                  let newItem = document.createElement("a");
-                  newItem.href = url;
-                  let id = snapshot.val().link.split('/').pop().split('.')[0];
-                  newItem.id = id;
-                  $('.content').append(newItem);
-                  $('#'+id).addClass('itemee').text(snapshot.val().name+'.'+snapshot.val().ext)
-                    .attr("target", "_blank");
-                  if (i === list.length-1) {
-                    $(".no").hide();
-                    $(".content").toggle();
-                    $(".loading").toggle();
-                  }
-                });
-              });
-            }
-          } else {
-            $(".content").toggle();
-            $(".loading").toggle();
-          }
-        });
-      } else {
-        txtElementToken.value = '';
-        $(".login").toggle();
-        $(".loading").toggle();
-      }
-    });
+    bruh();
   }
 }
