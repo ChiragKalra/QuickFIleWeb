@@ -67,8 +67,8 @@ function keypress(e) {
       if (txtElementToken.value == snapshot.val()) {
         firebase.database().ref('upload').once('value').then(function (snapshot) {
           if (!snapshot.val()) {
-            $(".upload").toggle();
-            $(".no").toggle();
+            $(".upload").hide();
+            $(".no").show();
           }
         });
         firebase.database().ref('public').once('value').then(function(snapshot) {
