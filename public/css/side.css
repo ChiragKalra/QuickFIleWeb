@@ -1,0 +1,113 @@
+/*disable scrolling*/
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: black;
+}
+
+/*disable +- of number input*/
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+div.background {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url('../img/black4k.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+div.content, div.login {
+  height: auto;
+  width: fit-content;
+  background: #25252d12;
+  box-shadow: black 0 0 10px 2px;
+  padding: 36px;
+}
+
+div.content {
+  display: none;
+}
+
+input {
+  background: #222222;
+  color: #b3d4fc;
+  margin: 20px;
+}
+
+img.loading {
+  display: none;
+  height: 150px;
+  width: 150px;
+  border-radius: 20px;
+  box-shadow: black 0 0 10px 2px;
+}
+
+h4 {
+  color: white;
+}
+
+a.itemee {
+  width: auto;
+  display: inline-block;
+  color: white;
+  padding: 53px 8px 53px 8px;
+  background: #49598a;
+  border-radius: 32px;
+  text-decoration: none;
+  margin: 8px;
+  box-shadow: black 0 0 6px 2px;
+}
+
+.progress-bar-vertical {
+  width: 128px;
+  min-height: 128px;
+  display: flex;
+  align-items: flex-end;
+  float: left;
+  border-radius: 32px;
+  margin: 8px;
+}
+
+.progress-bar-vertical .progress-bar {
+  width: 100%;
+  height: 0;
+  -webkit-transition: height 0.6s ease;
+  -o-transition: height 0.6s ease;
+  transition: height 0.6s ease;
+}
+
+
+.upload {
+  width: 128px;
+  height: 128px;
+  display: inline-block;
+  color: white;
+  padding: 18px;
+  background: #49598a;
+  border-radius: 32px;
+  text-decoration: none;
+  margin: 8px;
+  box-shadow: black 0 0 6px 2px;
+}
+
+.upload:hover, a.itemee:hover {
+  background: #7181b8;
+  box-shadow: black 0 0 6px 4px;
+  transition-duration: 0.3s;
+}
