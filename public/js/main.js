@@ -15,6 +15,7 @@ firebase.initializeApp(firebaseConfig);
 //get elements
 const txtElementToken = document.getElementById("token");
 const fileUpload = document.getElementById("upload");
+const okButton = document.getElementById("clickok");
 
 $("#upload").hide();
 $(".no").hide();
@@ -110,3 +111,5 @@ function keypress(e) {
     bruh();
   }
 }
+
+okButton.onclick = bruh;

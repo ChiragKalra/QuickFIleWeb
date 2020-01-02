@@ -1,20 +1,20 @@
-[debug] [2020-01-02T20:25:40.667Z] ----------------------------------------------------------------------
-[debug] [2020-01-02T20:25:40.669Z] Command:       /usr/bin/node /usr/local/bin/firebase deploy
-[debug] [2020-01-02T20:25:40.669Z] CLI Version:   7.11.0
-[debug] [2020-01-02T20:25:40.669Z] Platform:      linux
-[debug] [2020-01-02T20:25:40.669Z] Node Version:  v10.15.2
-[debug] [2020-01-02T20:25:40.674Z] Time:          Fri Jan 03 2020 01:55:40 GMT+0530 (India Standard Time)
-[debug] [2020-01-02T20:25:40.674Z] ----------------------------------------------------------------------
-[debug] [2020-01-02T20:25:40.674Z] 
-[debug] [2020-01-02T20:25:40.679Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2020-01-02T20:25:40.679Z] > authorizing via signed-in user
-[debug] [2020-01-02T20:25:40.679Z] [iam] checking project quick-2b172 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
-[debug] [2020-01-02T20:25:40.680Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/quick-2b172:testIamPermissions  
+[debug] [2020-01-02T20:30:58.937Z] ----------------------------------------------------------------------
+[debug] [2020-01-02T20:30:58.939Z] Command:       /usr/bin/node /usr/local/bin/firebase deploy
+[debug] [2020-01-02T20:30:58.939Z] CLI Version:   7.11.0
+[debug] [2020-01-02T20:30:58.939Z] Platform:      linux
+[debug] [2020-01-02T20:30:58.939Z] Node Version:  v10.15.2
+[debug] [2020-01-02T20:30:58.944Z] Time:          Fri Jan 03 2020 02:00:58 GMT+0530 (India Standard Time)
+[debug] [2020-01-02T20:30:58.944Z] ----------------------------------------------------------------------
+[debug] [2020-01-02T20:30:58.944Z] 
+[debug] [2020-01-02T20:30:58.949Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-02T20:30:58.949Z] > authorizing via signed-in user
+[debug] [2020-01-02T20:30:58.949Z] [iam] checking project quick-2b172 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2020-01-02T20:30:58.950Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/quick-2b172:testIamPermissions  
 
-[debug] [2020-01-02T20:25:42.585Z] <<< HTTP RESPONSE 200
-[debug] [2020-01-02T20:25:42.586Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/quick-2b172  
+[debug] [2020-01-02T20:31:00.835Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-02T20:31:00.837Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/quick-2b172  
  
-[debug] [2020-01-02T20:25:43.195Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-02T20:31:01.386Z] <<< HTTP RESPONSE 200
 [info] 
 [info] === Deploying to 'quick-2b172'...
 [info] 
@@ -22,7 +22,7 @@
 [info] Running command: npm --prefix "$RESOURCE_DIR" run lint
 [info] ✔  functions: Finished running predeploy script.
 [info] i  database: checking rules syntax...
-[debug] [2020-01-02T20:25:46.727Z] >>> HTTP REQUEST PUT https://quick-2b172.firebaseio.com/.settings/rules.json?dryRun=true  
+[debug] [2020-01-02T20:31:04.877Z] >>> HTTP REQUEST PUT https://quick-2b172.firebaseio.com/.settings/rules.json?dryRun=true  
  {
   "rules": {
     ".read": true,
@@ -30,17 +30,17 @@
   }
 }
 
-[debug] [2020-01-02T20:25:48.210Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-02T20:31:06.262Z] <<< HTTP RESPONSE 200
 [info] ✔  database: rules syntax for database quick-2b172 is valid
-[debug] [2020-01-02T20:25:48.211Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/quick-2b172  
+[debug] [2020-01-02T20:31:06.265Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/quick-2b172  
  
-[debug] [2020-01-02T20:25:51.181Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-02T20:31:09.032Z] <<< HTTP RESPONSE 200
 [info] i  firebase.storage: checking storage.rules for compilation errors...
-[debug] [2020-01-02T20:25:51.184Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/quick-2b172:test  
+[debug] [2020-01-02T20:31:09.037Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/quick-2b172:test  
 
-[debug] [2020-01-02T20:25:52.795Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-02T20:31:10.869Z] <<< HTTP RESPONSE 200
 [info] ✔  firebase.storage: rules file storage.rules compiled successfully
-[debug] [2020-01-02T20:25:52.796Z] > [functions] package.json contents: {
+[debug] [2020-01-02T20:31:10.874Z] > [functions] package.json contents: {
   "name": "functions",
   "description": "Cloud Functions for Firebase",
   "scripts": {
@@ -66,15 +66,15 @@
   "private": true
 }
 [info] i  functions: ensuring necessary APIs are enabled...
-[debug] [2020-01-02T20:25:52.797Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/quick-2b172/services/cloudfunctions.googleapis.com  
+[debug] [2020-01-02T20:31:10.877Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/quick-2b172/services/cloudfunctions.googleapis.com  
  
-[debug] [2020-01-02T20:25:52.797Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/quick-2b172/services/runtimeconfig.googleapis.com  
+[debug] [2020-01-02T20:31:10.878Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/quick-2b172/services/runtimeconfig.googleapis.com  
  
-[debug] [2020-01-02T20:25:54.877Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-02T20:31:12.821Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-02T20:31:12.887Z] <<< HTTP RESPONSE 200
 [info] ✔  functions: all necessary APIs are enabled
-[debug] [2020-01-02T20:25:54.908Z] <<< HTTP RESPONSE 200
-[debug] [2020-01-02T20:25:54.910Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/quick-2b172/adminSdkConfig  
+[debug] [2020-01-02T20:31:12.889Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/quick-2b172/adminSdkConfig  
  
-[debug] [2020-01-02T20:25:55.805Z] <<< HTTP RESPONSE 200
-[debug] [2020-01-02T20:25:55.806Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/quick-2b172/versions  
+[debug] [2020-01-02T20:31:13.181Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-02T20:31:13.184Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/quick-2b172/versions  
 
