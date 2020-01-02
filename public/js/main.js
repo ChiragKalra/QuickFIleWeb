@@ -17,6 +17,7 @@ const txtElementToken = document.getElementById("token");
 const fileUpload = document.getElementById("upload");
 
 $("#upload").toggle();
+$(".no").toggle();
 
 fileUpload.addEventListener('change', function(e) {
   firebase.database().ref('curr').once('value').then(function(snapshot) {
@@ -64,6 +65,12 @@ function keypress(e) {
     $(".loading").toggle();
     firebase.database().ref('key').once('value').then(function(snapshot) {
       if (txtElementToken.value == snapshot.val()) {
+        firebase.database().ref('upload').once('value').then(function (snapshot) {
+          if (!snapshot.val()) {
+            $(".upload").toggle();
+            $(".no").toggle();
+          }
+        });
         firebase.database().ref('public').once('value').then(function(snapshot) {
           const list = snapshot.val();
           if (list!=null && list.length!==0) {
@@ -79,6 +86,7 @@ function keypress(e) {
                   $('#'+id).addClass('itemee').text(snapshot.val().name+'.'+snapshot.val().ext)
                     .attr("target", "_blank");
                   if (i === list.length-1) {
+                    $(".no").hide();
                     $(".content").toggle();
                     $(".loading").toggle();
                   }
