@@ -16,8 +16,8 @@ firebase.initializeApp(firebaseConfig);
 const txtElementToken = document.getElementById("token");
 const fileUpload = document.getElementById("upload");
 
-$("#upload").toggle();
-$(".no").toggle();
+$("#upload").hide();
+$(".no").hide();
 
 fileUpload.addEventListener('change', function(e) {
   firebase.database().ref('curr').once('value').then(function(snapshot) {
