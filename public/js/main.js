@@ -1,13 +1,13 @@
 //initialise Firebase
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCqxCU7sGps89AA_-yNwijjT2yeblG3qEo",
-  authDomain: "quick-2b172.firebaseapp.com",
-  databaseURL: "https://quick-2b172.firebaseio.com",
-  projectId: "quick-2b172",
-  storageBucket: "quick-2b172.appspot.com",
-  messagingSenderId: "21587111177",
-  appId: "1:21587111177:web:1b36f04791073462"
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: ""
 };
 
 firebase.initializeApp(firebaseConfig);
